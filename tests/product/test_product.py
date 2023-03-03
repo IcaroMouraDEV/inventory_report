@@ -13,7 +13,7 @@ def test_cria_produto():
     )
 
     # https://www.programiz.com/python-programming/methods/built-in/repr
-    str = 'O produto Mouse Mx-9000 fabricado em 03/03/2023 por Moura Inc'
-    str2 = 'com validade até 03/03/2024 precisa ser armazenado Cuidado com usb.'
+    str = 'O produto Mouse Mx-9000 fabricado em 03/03/2023 por Moura Inc com'
+    str2 = 'validade até 03/03/2024 precisa ser armazenado Cuidado com usb'
 
-    assert repr(product) == f'{str} {str2}'
+    assert repr(product) == f'{str} {str2}.'
