@@ -25,8 +25,8 @@ class SimpleReport:
         company = SimpleReport.__get_most_commom_company(item_list)
         data_fabricacao, data_validade = data
 
-        return f'''
-Data de fabricação mais antiga: {data_fabricacao}
-Data de validade mais próxima: {data_validade}
-Empresa com mais produtos: {company}
-        '''
+        return (
+            f"Data de fabricação mais antiga: {data_fabricacao}\n"
+            f"Data de validade mais próxima: {data_validade}\n"
+            f"Empresa com mais produtos: {company}"
+        )
