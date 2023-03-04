@@ -26,7 +26,7 @@ class SimpleReport:
         data_fabricacao, data_validade = data
 
         return (
-            f"Data de fabricação mais antiga: {data_fabricacao}\n"
-            f"Data de validade mais próxima: {data_validade}\n"
-            f"Empresa com mais produtos: {company}"
+            f'Data de fabricação mais antiga: {data_fabricacao}\n'
+            f'Data de validade mais próxima: {data_validade}\n'
+            f'Empresa com mais produtos: {company}'
         )
