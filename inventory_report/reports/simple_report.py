@@ -11,7 +11,7 @@ class SimpleReport:
     @staticmethod
     def __get_fab_and_val_date(item_list):
         data_fabricacao = item_list[0]['data_de_fabricacao']
-        data_validade = date.today() + timedelta(days=9999)
+        data_validade = date.today() + timedelta(days=99999)
 
         for item in item_list:
             if item['data_de_fabricacao'] > data_fabricacao:
