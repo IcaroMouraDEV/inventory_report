@@ -5,18 +5,11 @@ import csv
 class Inventory:
     @staticmethod
     def import_data(path: str, type: str):
-        with open(path, encoding='utf-8') as file:
-            products = csv.reader(file, delimiter=',', quotechar='"')
-            header, *data = products
-            arr = []
-            print(data)
-            for index in range(len(data)):
-                dict = {}
-                for header_index in range(len(header)):
-                    dict[header[header_index]] = data[index][header_index]
-                arr.append(dict)
-            print(arr[0])
+        with open(path) as file:
+            reader = list(csv.DictReader(file))
 
-        report = SimpleReport if type == 'simples' else CompleteReport
+            report = SimpleReport if type == 'simples' else CompleteReport
 
-        return report.generate(arr)
+            return report.generate(reader)
+
+print(Inventory.import_data('inventory_report/data/inventory.csv', 'simples'))
