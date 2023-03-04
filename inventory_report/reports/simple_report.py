@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 from collections import Counter
 
 
@@ -14,7 +14,10 @@ class SimpleReport:
             if item['data_de_fabricacao'] > data_fabricacao:
                 data_fabricacao = item['data_de_fabricacao']
 
-            if data_validade > str(date.today()):
+            if (
+                data_validade > str(date.today())
+                and str(date.today() + timedelta(days=999))
+            ):
                 data_validade = item['data_de_validade']
 
             # print(data_validade > str(date.today()))
