@@ -6,7 +6,7 @@ class XmlImporter(Importer):
     @staticmethod
     def import_data(path):
         if path.split('.')[1] != 'xml':
-           raise ValueError('Arquivo inválido')
+            raise ValueError('Arquivo inválido')
         with open(path) as file:
             xml = ET.parse(file).getroot()
             return [
