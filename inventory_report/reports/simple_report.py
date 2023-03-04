@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date, datetime
 from collections import Counter
 
 
@@ -10,19 +10,15 @@ class SimpleReport:
     
     @staticmethod
     def __get_fab_and_val_date(item_list):
-        data_fabricacao = item_list[0]['data_de_fabricacao']
-        data_validade = date.today() + timedelta(days=99999)
-
-        for item in item_list:
-            if item['data_de_fabricacao'] > data_fabricacao:
-                data_fabricacao = item['data_de_fabricacao']
-
-            if (
-                data_validade > str(date.today())
-                and item['data_de_validade'] < data_validade
-            ):
-                data_validade = item['data_de_validade']
-
+        data_fabricacao = min([item['data_de_fabricacao'] for item in item_list])
+        data_validade = min(
+            [
+                item['data_de_validade'] for item in item_list if datetime.strptime(
+                    item['data_de_validade'],
+                    '%Y-%m-%d') > datetime.now()
+                ]
+            )
+        
         return (data_fabricacao, data_validade)
  
     @staticmethod
