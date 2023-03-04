@@ -14,9 +14,10 @@ class SimpleReport:
             if item['data_de_fabricacao'] > data_fabricacao:
                 data_fabricacao = item['data_de_fabricacao']
 
-            if data_validade < str(date.today()):
+            if data_validade > str(date.today()):
                 data_validade = item['data_de_validade']
 
+            # print(data_validade > str(date.today()))
         return f'''
 Data de fabricação mais antiga: {data_fabricacao}
 Data de validade mais próxima: {data_validade}
