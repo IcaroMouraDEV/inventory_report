@@ -20,5 +20,5 @@ class SimpleReport:
         return f'''
 Data de fabricação mais antiga: {data_fabricacao}
 Data de validade mais próxima: {data_validade}
-Empresa com mais produtos: {company}
+Empresa com mais produtos: {company.most_common(1)[0][0]}
         '''
