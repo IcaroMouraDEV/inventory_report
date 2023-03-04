@@ -25,5 +25,3 @@ class Inventory:
             report = SimpleReport if type == 'simples' else CompleteReport
 
             return report.generate(data)
-
-print(Inventory.import_data('inventory_report/data/inventory.csv', 'simples'))
