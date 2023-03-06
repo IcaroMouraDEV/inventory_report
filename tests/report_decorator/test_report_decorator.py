@@ -3,6 +3,7 @@ from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 from inventory_report.importer.csv_importer import CsvImporter
 
+
 def test_decorar_relatorio():
     path = 'inventory_report/data/inventory.csv'
     products = CsvImporter.import_data(path)
