@@ -21,7 +21,7 @@ class Inventory:
                 data = [
                     {itm.tag: itm.text for itm in product} for product in xml
                 ]
-            
+
             report = SimpleReport if type == 'simples' else CompleteReport
 
             return report.generate(data)

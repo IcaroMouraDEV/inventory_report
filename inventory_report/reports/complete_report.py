@@ -10,7 +10,7 @@ class CompleteReport(SimpleReport):
 
         for name, qtd in company.items():
             add_info += f'- {name}: {qtd}\n'
-        
+
         return f'Produtos estocados por empresa:\n{add_info}'
 
     @classmethod
@@ -18,4 +18,3 @@ class CompleteReport(SimpleReport):
         simple_report = super().generate(item_list)
         add_report_info = cls._count_company_items(item_list)
         return simple_report + '\n' + add_report_info
-
