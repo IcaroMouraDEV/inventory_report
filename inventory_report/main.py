@@ -19,5 +19,6 @@ def main():
 
     print(report, end='')
 
+
 if __name__ == '__main__':
     main()
