@@ -5,12 +5,12 @@ class InventoryIterator(Iterator):
     def __init__(self, data) -> None:
         self.data = data
         self.index = 0
-    
+
     def __next__(self):
         data = self.data[self.index]
 
         if not data:
             raise StopIteration()
-        
+
         self.index += 1
         return data

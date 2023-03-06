@@ -7,11 +7,11 @@ class InventoryRefactor:
     def __init__(self, importer):
         self.importer = importer
         self.data = []
-    
+
     def import_data(self, path: str, type: str):
         self.data += self.importer.import_data(path)
         report = {'simples': SimpleReport, 'completo': CompleteReport}
         return report[type].generate(self.data)
-    
+
     def __iter__(self):
         return InventoryIterator(self.data)
